@@ -160,4 +160,7 @@
     <color name="call_log_voicemail_status_text_color">#888888</color>
     <color name="call_log_voicemail_status_action_text_color">#33b5e5</color>
     <color name="dialtacts_frame_color">#33999999</color>
+
+    <!-- Call button color separated from dialpad_primary_text_color, for better theme support -->
+    <color name="dialpad_call_button_color">#22b5e5</color>
 </resources>
