@@ -49,6 +49,7 @@ public class CallRecorderService extends Service {
     private RecorderState mState = RecorderState.IDLE;
     private CallRecording mCurrentRecording = null;
 
+    private static final String ENABLE_PROPERTY = "persist.call_recording.enabled";
     private static final String AUDIO_SOURCE_PROPERTY = "persist.call_recording.src";
 
     private SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyyMMddHHmmssSSS");
@@ -212,6 +213,7 @@ public class CallRecorderService extends Service {
     }
 
     public static boolean isEnabled(Context context) {
-        return context.getResources().getBoolean(R.bool.call_recording_enabled);
+        boolean defaultValue = context.getResources().getBoolean(R.bool.call_recording_enabled);
+        return SystemProperties.getBoolean(ENABLE_PROPERTY, defaultValue);
     }
 }
